@@ -1,0 +1,10 @@
+{% block title %}All Problems{% endblock title %}
+  
+  {% block content %}
+    
+    <ul>
+      {% for problem in p_list %}
+        <li>{{ problem.name }}</li>
+     {% endfor %}
+   </ul>
+{% endblock content %}
