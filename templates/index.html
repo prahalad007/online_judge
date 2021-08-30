@@ -1,10 +1,9 @@
-{% block title %}All Problems{% endblock title %}
-  
-  {% block content %}
-    
+{% if p_list %}
     <ul>
-      {% for problem in p_list %}
-        <li>{{ problem.name }}</li>
-     {% endfor %}
-   </ul>
-{% endblock content %}
+    {% for problem in p_list %}
+        <li><a  href="{% url 'problem_details' problem.name %}">{{ problem.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No available problems.</p>
+{% endif %}
